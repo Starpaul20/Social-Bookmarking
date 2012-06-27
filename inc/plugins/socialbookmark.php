@@ -27,6 +27,7 @@ $plugins->add_hook("showthread_start", "socialbookmark_run");
 $plugins->add_hook("admin_config_menu", "socialbookmark_admin_menu");
 $plugins->add_hook("admin_config_action_handler", "socialbookmark_admin_action_handler");
 $plugins->add_hook("admin_config_permissions", "socialbookmark_admin_permissions");
+$plugins->add_hook("admin_tools_get_admin_log_action", "socialbookmark_admin_adminlog");
 
 // The information that shows up on the plugin manager
 function socialbookmark_info()
@@ -218,6 +219,15 @@ function socialbookmark_admin_permissions($admin_permissions)
 	$admin_permissions['bookmarks'] = $lang->can_manage_social_bookmarks;
 
 	return $admin_permissions;
+}
+
+// Admin Log display
+function socialbookmark_admin_adminlog($plugin_array)
+{
+  	global $lang;
+	$lang->load("config_bookmarks");
+
+	return $plugin_array;
 }
 
 ?>

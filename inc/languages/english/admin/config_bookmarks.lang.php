@@ -46,4 +46,11 @@ $l['enable_bookmark'] = "Enable Bookmark";
 $l['delete_bookmark'] = "Delete Bookmark";
 $l['confirm_bookmark_deletion'] = "Are you sure you wish to delete this bookmark?";
 
+// Admin Log
+$l['admin_log_config_bookmarks_add'] = "Added bookmark #{1} ({2})";
+$l['admin_log_config_bookmarks_edit'] = "Edited bookmark #{1} ({2})";
+$l['admin_log_config_bookmarks_delete'] = "Deleted bookmark #{1} ({2})";
+$l['admin_log_config_bookmarks_disable'] = "Disabled bookmark #{1} ({2})";
+$l['admin_log_config_bookmarks_enable'] = "Enabled bookmark #{1} ({2})";
+
 ?>
