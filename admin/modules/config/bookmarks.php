@@ -42,8 +42,8 @@ if($mybb->input['action'] == "add")
 				"name" => $db->escape_string($mybb->input['name']),
 				"link" => $db->escape_string($mybb->input['link']),
 				"image" => $db->escape_string($mybb->input['image']),
-				"disporder" => intval($mybb->input['disporder']),
-				"active" => $db->escape_string($mybb->input['active'])
+				"disporder" => (int)$mybb->input['disporder'],
+				"active" => (int)$mybb->input['active']
 			);
 
 			$bid = $db->insert_query("bookmarks", $new_bookmark);
@@ -107,7 +107,7 @@ if($mybb->input['action'] == "add")
 
 if($mybb->input['action'] == "edit")
 {
-	$query = $db->simple_select("bookmarks", "*", "bid='".intval($mybb->input['bid'])."'");
+	$query = $db->simple_select("bookmarks", "*", "bid='".(int)$mybb->input['bid']."'");
 	$bookmark = $db->fetch_array($query);
 
 	if(!$bookmark['bid'])
@@ -144,11 +144,11 @@ if($mybb->input['action'] == "edit")
 				"name" => $db->escape_string($mybb->input['name']),
 				"link" => $db->escape_string($mybb->input['link']),
 				"image" => $db->escape_string($mybb->input['image']),
-				"disporder" => intval($mybb->input['disporder']),
-				"active" => $db->escape_string($mybb->input['active'])
+				"disporder" => (int)$mybb->input['disporder'],
+				"active" => (int)$mybb->input['active']
 			);
-			
-			$db->update_query("bookmarks", $update_bookmark, "bid='".intval($mybb->input['bid'])."'");
+
+			$db->update_query("bookmarks", $update_bookmark, "bid='{$bookmark['bid']}'");
 
 			// Log admin action
 			log_admin_action($bookmark['bid'], $mybb->input['name']);
@@ -166,7 +166,7 @@ if($mybb->input['action'] == "edit")
 		'link' => "index.php?module=config-bookmarks&amp;action=edit",
 		'description' => $lang->edit_social_bookmark_desc
 	);
-	
+
 	$page->output_nav_tabs($sub_tabs, 'edit_bookmark');
 
 	$form = new Form("index.php?module=config-bookmarks&amp;action=edit", "post", "edit");
@@ -199,7 +199,7 @@ if($mybb->input['action'] == "edit")
 
 if($mybb->input['action'] == "delete")
 {
-	$query = $db->simple_select("bookmarks", "*", "bid='".intval($mybb->input['bid'])."'");
+	$query = $db->simple_select("bookmarks", "*", "bid='".(int)$mybb->input['bid']."'");
 	$bookmark = $db->fetch_array($query);
 
 	if(!$bookmark['bid'])
@@ -232,7 +232,7 @@ if($mybb->input['action'] == "delete")
 
 if($mybb->input['action'] == "disable")
 {	
-	$query = $db->simple_select("bookmarks", "*", "bid='".intval($mybb->input['bid'])."'");
+	$query = $db->simple_select("bookmarks", "*", "bid='".(int)$mybb->input['bid']."'");
 	$bookmark = $db->fetch_array($query);
 
 	if(!$bookmark['bid'])
@@ -244,7 +244,7 @@ if($mybb->input['action'] == "disable")
 	$active = array(
 		"active" => 0
 	);
-	$db->update_query("bookmarks", $active, "bid='{$mybb->input['bid']}'");
+	$db->update_query("bookmarks", $active, "bid='{$bookmark['bid']}'");
 
 	// Log admin action
 	log_admin_action($bookmark['bid'], $bookmark['name']);
@@ -255,7 +255,7 @@ if($mybb->input['action'] == "disable")
 
 if($mybb->input['action'] == "enable")
 {
-	$query = $db->simple_select("bookmarks", "*", "bid='".intval($mybb->input['bid'])."'");
+	$query = $db->simple_select("bookmarks", "*", "bid='".(int)$mybb->input['bid']."'");
 	$bookmark = $db->fetch_array($query);
 
 	if(!$bookmark['bid'])
@@ -267,7 +267,7 @@ if($mybb->input['action'] == "enable")
 	$active = array(
 		"active" => 1
 	);
-	$db->update_query("bookmarks", $active, "bid='{$mybb->input['bid']}'");
+	$db->update_query("bookmarks", $active, "bid='{$bookmark['bid']}'");
 
 	// Log admin action
 	log_admin_action($bookmark['bid'], $bookmark['name']);

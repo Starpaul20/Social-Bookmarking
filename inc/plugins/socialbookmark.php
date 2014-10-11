@@ -89,8 +89,8 @@ function socialbookmark_uninstall()
 function socialbookmark_activate()
 {
 	global $db;
-	$bookmarkquery = $db->simple_select("settinggroups", "gid", "name='showthread'");
-	$gid = intval($db->fetch_field($bookmarkquery, "gid"));
+	$query = $db->simple_select("settinggroups", "gid", "name='showthread'");
+	$gid = $db->fetch_field($query, "gid");
 
 	$insertarray = array(
 		'name' => 'showbookmarking',
@@ -98,8 +98,8 @@ function socialbookmark_activate()
 		'description' => 'The Social Bookmarking table allows for users to bookmark threads to various bookmarking sites.',
 		'optionscode' => 'onoff',
 		'value' => 1,
-		'disporder' => 14,
-		'gid' => $gid
+		'disporder' => 15,
+		'gid' => (int)$gid
 	);
 	$db->insert_query("settings", $insertarray);
 
@@ -109,8 +109,8 @@ function socialbookmark_activate()
 		'description' => 'The number of social bookmarks to display on a single row of the bookmark table. It is recommended that this value be no higher than 10.',
 		'optionscode' => 'text',
 		'value' => 4,
-		'disporder' => 15,
-		'gid' => $gid
+		'disporder' => 16,
+		'gid' => (int)$gid
 	);
 	$db->insert_query("settings", $insertarray);
 
@@ -172,7 +172,7 @@ function socialbookmark_run()
 	global $db, $mybb, $templates, $theme, $lang, $thread, $socialbookmarks;
 	$lang->load("admin/config_bookmarks");
 
-	if($mybb->settings['showbookmarking'] != '0')
+	if($mybb->settings['showbookmarking'] != 0)
 	{
 		$bookmarkcount = 0;
 		$query = $db->simple_select("bookmarks", "*", "active='1'", array('order_by' => 'disporder', 'order_dir' => 'ASC'));
