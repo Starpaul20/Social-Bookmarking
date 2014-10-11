@@ -1,2 +1,7 @@
+1.0 (October 11th, 2014)
+- Updated plugin to work with MyBB 1.8
+
+## Version number reset for MyBB 1.8 ##
+
 1.0
 - Initial release

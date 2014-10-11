@@ -1,6 +1,6 @@
 ## INFORMATION ##
 
-Social Bookmarking (1.0) for MyBB 1.6
+Social Bookmarking (1.0) for MyBB 1.8
 Created by: Starpaul20
 Copyright: ©2011
 License: GPL
@@ -12,6 +12,8 @@ The social bookmark table appears at the bottom of a thread between the last pos
 16 image icons for the most common bookmark sites are included in the images/bookmarks folder. The BOOKMARKS.txt file contains the necessary info to create those bookmarks in the Admin CP.
 
 The settings for this plugin are located under the 'Show Thread Options' setting group. This plugin offers full language support.
+
+The 'oldrelease' branch contains the 1.6 version of the plugin.
 
 
 ## INSTALLATION ##

@@ -39,8 +39,7 @@ function socialbookmark_info()
 		"author"			=> "Starpaul20",
 		"authorsite"		=> "http://galaxiesrealm.com/index.php",
 		"version"			=> "1.0",
-		"guid"				=> "32f7fb8adf2879b34edc38f4fb89e6d9",
-		"compatibility"		=> "16*"
+		"compatibility"		=> "18*"
 	);
 }
 
