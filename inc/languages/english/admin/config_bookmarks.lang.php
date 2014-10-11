@@ -3,7 +3,10 @@
  * Social Bookmarking Manager
  * Copyright 2011 Starpaul20
  */
- 
+
+$l['socialbookmark_info_name'] = "Social Bookmarking";
+$l['socialbookmark_info_desc'] = "Allows you to create links to submit threads to various social bookmarking sites.";
+
 $l['bookmarks'] = "Bookmarks";
 $l['submit_thread_to'] = "Submit Thread to {1}";
 

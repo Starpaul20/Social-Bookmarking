@@ -32,9 +32,12 @@ $plugins->add_hook("admin_tools_get_admin_log_action", "socialbookmark_admin_adm
 // The information that shows up on the plugin manager
 function socialbookmark_info()
 {
+	global $lang;
+	$lang->load("config_bookmarks");
+
 	return array(
-		"name"				=> "Social Bookmarking",
-		"description"		=> "Allows you to create links to submit threads to various social bookmarking sites.",
+		"name"				=> $lang->socialbookmark_info_name,
+		"description"		=> $lang->socialbookmark_info_desc,
 		"website"			=> "http://galaxiesrealm.com/index.php",
 		"author"			=> "Starpaul20",
 		"authorsite"		=> "http://galaxiesrealm.com/index.php",
