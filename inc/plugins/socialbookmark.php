@@ -89,6 +89,8 @@ function socialbookmark_uninstall()
 function socialbookmark_activate()
 {
 	global $db;
+
+	// Insert settings
 	$query = $db->simple_select("settinggroups", "gid", "name='showthread'");
 	$gid = $db->fetch_field($query, "gid");
 
@@ -116,6 +118,7 @@ function socialbookmark_activate()
 
 	rebuild_settings();
 
+	// Inserts templates
 	$insert_array = array(
 		'title'		=> 'showthread_bookmarks',
 		'template'	=> $db->escape_string('<br />
@@ -146,6 +149,7 @@ function socialbookmark_activate()
 	);
 	$db->insert_query("templates", $insert_array);
 
+	// Update templates
 	include MYBB_ROOT."/inc/adminfunctions_templates.php";
 	find_replace_templatesets("showthread", "#".preg_quote('{$quickreply}')."#i", '{$socialbookmarks}{$quickreply}');
 
@@ -215,7 +219,7 @@ function socialbookmark_admin_action_handler($actions)
 
 function socialbookmark_admin_permissions($admin_permissions)
 {
-  	global $db, $mybb, $lang;
+	global $db, $mybb, $lang;
 	$lang->load("config_bookmarks");
 
 	$admin_permissions['bookmarks'] = $lang->can_manage_social_bookmarks;
@@ -226,7 +230,7 @@ function socialbookmark_admin_permissions($admin_permissions)
 // Admin Log display
 function socialbookmark_admin_adminlog($plugin_array)
 {
-  	global $lang;
+	global $lang;
 	$lang->load("config_bookmarks");
 
 	return $plugin_array;
