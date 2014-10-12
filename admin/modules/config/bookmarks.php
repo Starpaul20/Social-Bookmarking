@@ -303,11 +303,11 @@ if(!$mybb->input['action'])
 		$bookmark['name'] = htmlspecialchars_uni($bookmark['name']);
 		if($bookmark['active'] == 1)
 		{
-			$icon = "<img src=\"styles/{$page->style}/images/icons/bullet_on.gif\" alt=\"({$lang->alt_enabled})\" title=\"{$lang->alt_enabled}\"  style=\"vertical-align: middle;\" /> ";
+			$icon = "<img src=\"styles/{$page->style}/images/icons/bullet_on.png\" alt=\"({$lang->alt_enabled})\" title=\"{$lang->alt_enabled}\"  style=\"vertical-align: middle;\" /> ";
 		}
 		else
 		{
-			$icon = "<img src=\"styles/{$page->style}/images/icons/bullet_off.gif\" alt=\"({$lang->alt_disabled})\" title=\"{$lang->alt_disabled}\"  style=\"vertical-align: middle;\" /> ";
+			$icon = "<img src=\"styles/{$page->style}/images/icons/bullet_off.png\" alt=\"({$lang->alt_disabled})\" title=\"{$lang->alt_disabled}\"  style=\"vertical-align: middle;\" /> ";
 		}
 		$table->construct_cell("<div>{$icon}<strong><a href=\"index.php?module=config-bookmarks&amp;action=edit&amp;bid={$bookmark['bid']}\">{$bookmark['name']}</a></strong></div>");
 
