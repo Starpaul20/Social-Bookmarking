@@ -3,59 +3,43 @@ The icons are already included in the images/bookmarks folder:
 
 Digg
 http://digg.com/submit?phrase=2&url={url}&title={title}
-images/bookmarks/digg.gif
+images/bookmarks/digg.png
 
 del.icio.us
 http://del.icio.us/post?url={url}&title={title}
-images/bookmarks/delicious.gif
+images/bookmarks/delicious.png
 
 StumbleUpon
 http://www.stumbleupon.com/submit?url={url}&title={title}
-images/bookmarks/stumbleupon.gif
+images/bookmarks/stumbleupon.png
 
 Facebook
 http://www.facebook.com/sharer.php?u={url}&title={title}
-images/bookmarks/facebook.gif
+images/bookmarks/facebook.png
 
 Google
 http://www.google.com/bookmarks/mark?op=edit&bkmk={url}&title={title}
-images/bookmarks/google.gif
+images/bookmarks/google.png
 
 MySpace
 http://www.myspace.com/Modules/PostTo/Pages/?t={title}&c=&u={url}&l=2
-images/bookmarks/myspace.gif
-
-Furl
-http://www.furl.net/storeIt.jsp?u={url}&amp;t={title}
-images/bookmarks/furl.gif
+images/bookmarks/myspace.png
 
 Reddit
 http://reddit.com/submit?url={url}&amp;title={title}
-images/bookmarks/reddit.gif
-
-Live
-https://favorites.live.com/quickadd.aspx?marklet=1&mkt=en-us&url={url}&title={title}
-images/bookmarks/live.gif
-
-Yahoo
-http://myweb2.search.yahoo.com/myresults/bookmarklet?t={title}&u={url}
-images/bookmarks/yahoo.gif
+images/bookmarks/reddit.png
 
 Twitter
 http://twitter.com/?status={title} {url}
-images/bookmarks/twitter.gif
+images/bookmarks/twitter.png
 
 Bebo
 http://www.bebo.com/c/share?Url={url}&Title={title}
-images/bookmarks/bebo.gif
+images/bookmarks/bebo.png
 
 LinkedIn
 http://www.linkedin.com/shareArticle?url={url}&title={title}
 images/bookmarks/linkedin.png
-
-Technorati
-http://technorati.com/faves?add={url}
-images/bookmarks/technorati.png
 
 Blogger
 http://www.blogger.com/blog-this.g?u={url}&n={title}

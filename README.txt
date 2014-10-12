@@ -9,7 +9,7 @@ Allows you to create links to submit threads to various social bookmarking sites
 
 The social bookmark table appears at the bottom of a thread between the last post of the page and the quick reply (the bookmark box won't appear unless there is at least one active bookmark link).
 
-16 image icons for the most common bookmark sites are included in the images/bookmarks folder. The BOOKMARKS.txt file contains the necessary info to create those bookmarks in the Admin CP.
+12 image icons for the most common bookmark sites are included in the images/bookmarks folder. The BOOKMARKS.txt file contains the necessary info to create those bookmarks in the Admin CP.
 
 The settings for this plugin are located under the 'Show Thread Options' setting group. This plugin offers full language support.
 
