@@ -42,8 +42,8 @@ if($mybb->input['action'] == "add")
 				"name" => $db->escape_string($mybb->input['name']),
 				"link" => $db->escape_string($mybb->input['link']),
 				"image" => $db->escape_string($mybb->input['image']),
-				"disporder" => (int)$mybb->input['disporder'],
-				"active" => (int)$mybb->input['active']
+				"disporder" => $mybb->get_input('disporder', MyBB::INPUT_INT),
+				"active" => $mybb->get_input('active', MyBB::INPUT_INT)
 			);
 
 			$bid = $db->insert_query("bookmarks", $new_bookmark);
@@ -107,7 +107,7 @@ if($mybb->input['action'] == "add")
 
 if($mybb->input['action'] == "edit")
 {
-	$query = $db->simple_select("bookmarks", "*", "bid='".(int)$mybb->input['bid']."'");
+	$query = $db->simple_select("bookmarks", "*", "bid='".$mybb->get_input('bid', MyBB::INPUT_INT)."'");
 	$bookmark = $db->fetch_array($query);
 
 	if(!$bookmark['bid'])
@@ -144,8 +144,8 @@ if($mybb->input['action'] == "edit")
 				"name" => $db->escape_string($mybb->input['name']),
 				"link" => $db->escape_string($mybb->input['link']),
 				"image" => $db->escape_string($mybb->input['image']),
-				"disporder" => (int)$mybb->input['disporder'],
-				"active" => (int)$mybb->input['active']
+				"disporder" => $mybb->get_input('disporder', MyBB::INPUT_INT),
+				"active" => $mybb->get_input('active', MyBB::INPUT_INT)
 			);
 
 			$db->update_query("bookmarks", $update_bookmark, "bid='{$bookmark['bid']}'");
@@ -199,7 +199,7 @@ if($mybb->input['action'] == "edit")
 
 if($mybb->input['action'] == "delete")
 {
-	$query = $db->simple_select("bookmarks", "*", "bid='".(int)$mybb->input['bid']."'");
+	$query = $db->simple_select("bookmarks", "*", "bid='".$mybb->get_input('bid', MyBB::INPUT_INT)."'");
 	$bookmark = $db->fetch_array($query);
 
 	if(!$bookmark['bid'])
@@ -232,7 +232,7 @@ if($mybb->input['action'] == "delete")
 
 if($mybb->input['action'] == "disable")
 {	
-	$query = $db->simple_select("bookmarks", "*", "bid='".(int)$mybb->input['bid']."'");
+	$query = $db->simple_select("bookmarks", "*", "bid='".$mybb->get_input('bid', MyBB::INPUT_INT)."'");
 	$bookmark = $db->fetch_array($query);
 
 	if(!$bookmark['bid'])
@@ -255,7 +255,7 @@ if($mybb->input['action'] == "disable")
 
 if($mybb->input['action'] == "enable")
 {
-	$query = $db->simple_select("bookmarks", "*", "bid='".(int)$mybb->input['bid']."'");
+	$query = $db->simple_select("bookmarks", "*", "bid='".$mybb->get_input('bid', MyBB::INPUT_INT)."'");
 	$bookmark = $db->fetch_array($query);
 
 	if(!$bookmark['bid'])
