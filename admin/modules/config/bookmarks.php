@@ -93,7 +93,7 @@ if($mybb->input['action'] == "add")
 	$form_container->output_row($lang->name." <em>*</em>", "", $form->generate_text_box('name', $mybb->input['name'], array('id' => 'name')), 'name');
 	$form_container->output_row($lang->link." <em>*</em>", $lang->link_desc, $form->generate_text_box('link', $mybb->input['link'], array('id' => 'link')), 'link');
 	$form_container->output_row($lang->bookmark_icon_path." <em>*</em>", $lang->bookmark_icon_path_desc, $form->generate_text_box('image', $mybb->input['image'], array('id' => 'image')), 'image');
-	$form_container->output_row($lang->display_order." <em>*</em>", $lang->bookmark_display_order_desc, $form->generate_text_box('disporder', $mybb->input['disporder'], array('id' => 'disporder')), 'disporder');
+	$form_container->output_row($lang->display_order." <em>*</em>", $lang->bookmark_display_order_desc, $form->generate_numeric_field('disporder', $mybb->input['disporder'], array('id' => 'disporder', 'min' => 0)), 'disporder');
 	$form_container->output_row($lang-> active." <em>*</em>", "", $form->generate_yes_no_radio('active', $mybb->input['active']));
 	$form_container->end();
 
@@ -185,7 +185,7 @@ if($mybb->input['action'] == "edit")
 	$form_container->output_row($lang->name." <em>*</em>", "", $form->generate_text_box('name', $mybb->input['name'], array('id' => 'name')), 'name');
 	$form_container->output_row($lang->link." <em>*</em>", $lang->link_desc, $form->generate_text_box('link', $mybb->input['link'], array('id' => 'link')), 'link');
 	$form_container->output_row($lang->bookmark_icon_path." <em>*</em>", $lang->bookmark_icon_path_desc, $form->generate_text_box('image', $mybb->input['image'], array('id' => 'image')), 'image');
-	$form_container->output_row($lang->display_order." <em>*</em>", $lang->bookmark_display_order_desc, $form->generate_text_box('disporder', $mybb->input['disporder'], array('id' => 'disporder')), 'disporder');
+	$form_container->output_row($lang->display_order." <em>*</em>", $lang->bookmark_display_order_desc, $form->generate_numeric_field('disporder', $mybb->input['disporder'], array('id' => 'disporder', 'min' => 0)), 'disporder');
 	$form_container->output_row($lang-> active." <em>*</em>", "", $form->generate_yes_no_radio('active', $mybb->input['active']));
 	$form_container->end();
 

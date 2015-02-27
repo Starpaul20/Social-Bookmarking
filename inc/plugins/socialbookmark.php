@@ -136,7 +136,7 @@ function socialbookmark_activate()
 		'name' => 'bookmarking_number',
 		'title' => 'Number of Bookmarks per row',
 		'description' => 'The number of social bookmarks to display on a single row of the bookmark table. It is recommended that this value be no higher than 10.',
-		'optionscode' => 'text',
+		'optionscode' => 'numeric',
 		'value' => 4,
 		'disporder' => 16,
 		'gid' => (int)$gid
