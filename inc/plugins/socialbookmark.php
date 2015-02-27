@@ -54,15 +54,41 @@ function socialbookmark_install()
 	socialbookmark_uninstall();
 	$collation = $db->build_create_table_collation();
 
-	$db->write_query("CREATE TABLE ".TABLE_PREFIX."bookmarks (
-				bid int(10) unsigned NOT NULL auto_increment,
+	switch($db->type)
+	{
+		case "pgsql":
+			$db->write_query("CREATE TABLE ".TABLE_PREFIX."bookmarks (
+				bid serial,
+				name varchar(120) NOT NULL default '',
+				link varchar(255) NOT NULL default '',
+				image varchar(220) NOT NULL default '',
+				disporder smallint NOT NULL default '0',
+				active smallint NOT NULL default '1',
+				PRIMARY KEY (bid)
+			);");
+			break;
+		case "sqlite":
+			$db->write_query("CREATE TABLE ".TABLE_PREFIX."bookmarks (
+				bid INTEGER PRIMARY KEY,
 				name varchar(120) NOT NULL default '',
 				link varchar(255) NOT NULL default '',
 				image varchar(220) NOT NULL default '',
 				disporder smallint(5) NOT NULL default '0',
-				active int(1) NOT NULL default '1',
-				PRIMARY KEY(bid)
-			) ENGINE=MyISAM{$collation}");
+				active tinyint(1) NOT NULL default '1'
+			);");
+			break;
+		default:
+			$db->write_query("CREATE TABLE ".TABLE_PREFIX."bookmarks (
+				bid int unsigned NOT NULL auto_increment,
+				name varchar(120) NOT NULL default '',
+				link varchar(255) NOT NULL default '',
+				image varchar(220) NOT NULL default '',
+				disporder smallint(5) unsigned NOT NULL default '0',
+				active tinyint(1) NOT NULL default '1',
+				PRIMARY KEY (bid)
+			) ENGINE=MyISAM{$collation};");
+			break;
+	}
 }
 
 // Checks to make sure plugin is installed
