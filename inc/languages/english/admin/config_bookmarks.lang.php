@@ -55,5 +55,3 @@ $l['admin_log_config_bookmarks_edit'] = "Edited bookmark #{1} ({2})";
 $l['admin_log_config_bookmarks_delete'] = "Deleted bookmark #{1} ({2})";
 $l['admin_log_config_bookmarks_disable'] = "Disabled bookmark #{1} ({2})";
 $l['admin_log_config_bookmarks_enable'] = "Enabled bookmark #{1} ({2})";
-
-?>
