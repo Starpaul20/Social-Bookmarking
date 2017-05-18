@@ -6,45 +6,45 @@ http://digg.com/submit?phrase=2&url={url}&title={title}
 images/bookmarks/digg.png
 
 del.icio.us
-http://del.icio.us/post?url={url}&title={title}
+https://del.icio.us/post?url={url}&title={title}
 images/bookmarks/delicious.png
 
 StumbleUpon
-http://www.stumbleupon.com/submit?url={url}&title={title}
+http://www.stumbleupon.com/badge?url={url}&title={title}
 images/bookmarks/stumbleupon.png
 
 Facebook
-http://www.facebook.com/sharer.php?u={url}&title={title}
+https://www.facebook.com/sharer.php?u={url}&title={title}
 images/bookmarks/facebook.png
 
 Google
-http://www.google.com/bookmarks/mark?op=edit&bkmk={url}&title={title}
+https://www.google.com/bookmarks/mark?op=edit&bkmk={url}&title={title}
 images/bookmarks/google.png
 
-MySpace
-http://www.myspace.com/Modules/PostTo/Pages/?t={title}&c=&u={url}&l=2
-images/bookmarks/myspace.png
-
 Reddit
-http://reddit.com/submit?url={url}&amp;title={title}
+https://www.reddit.com/submit?url={url}&title={title}
 images/bookmarks/reddit.png
 
 Twitter
-http://twitter.com/?status={title} {url}
+https://twitter.com/intent/tweet?text={title} {url}
 images/bookmarks/twitter.png
 
-Bebo
-http://www.bebo.com/c/share?Url={url}&Title={title}
-images/bookmarks/bebo.png
-
 LinkedIn
-http://www.linkedin.com/shareArticle?url={url}&title={title}
+https://www.linkedin.com/shareArticle?url={url}&title={title}
 images/bookmarks/linkedin.png
 
 Blogger
-http://www.blogger.com/blog-this.g?u={url}&n={title}
+https://www.blogger.com/blog-this.g?u={url}&n={title}
 images/bookmarks/blogger.png
 
 Fark
-http://www.fark.com/cgi/farkit.pl?u={url}
+https://www.fark.com/submit?new_url={url}
 images/bookmarks/fark.png
+
+Tumblr
+https://www.tumblr.com/widgets/share/tool?canonicalUrl={url}
+images/bookmarks/tumblr.png
+
+Pinterest
+http://pinterest.com/pin/create/button/?url={url}
+images/bookmarks/pinterest.png
