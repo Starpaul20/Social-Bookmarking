@@ -49,7 +49,7 @@ if($mybb->input['action'] == "add")
 			$bid = $db->insert_query("bookmarks", $new_bookmark);
 
 			// Log admin action
-			log_admin_action($bid, $mybb->input['name']);
+			log_admin_action($bid, htmlspecialchars_uni($mybb->input['name']));
 
 			flash_message($lang->success_bookmark_added, 'success');
 			admin_redirect("index.php?module=config-bookmarks");
@@ -151,7 +151,7 @@ if($mybb->input['action'] == "edit")
 			$db->update_query("bookmarks", $update_bookmark, "bid='{$bookmark['bid']}'");
 
 			// Log admin action
-			log_admin_action($bookmark['bid'], $mybb->input['name']);
+			log_admin_action($bookmark['bid'], htmlspecialchars_uni($mybb->input['name']));
 
 			flash_message($lang->success_bookmark_updated, 'success');
 			admin_redirect("index.php?module=config-bookmarks");
@@ -219,7 +219,7 @@ if($mybb->input['action'] == "delete")
 		$db->delete_query("bookmarks", "bid='{$bookmark['bid']}'");
 
 		// Log admin action
-		log_admin_action($bookmark['bid'], $bookmark['name']);
+		log_admin_action($bookmark['bid'], htmlspecialchars_uni($bookmark['name']));
 
 		flash_message($lang->success_bookmark_deleted, 'success');
 		admin_redirect("index.php?module=config-bookmarks");
@@ -247,7 +247,7 @@ if($mybb->input['action'] == "disable")
 	$db->update_query("bookmarks", $active, "bid='{$bookmark['bid']}'");
 
 	// Log admin action
-	log_admin_action($bookmark['bid'], $bookmark['name']);
+	log_admin_action($bookmark['bid'], htmlspecialchars_uni($bookmark['name']));
 
 	flash_message($lang->success_bookmark_disabled, 'success');
 	admin_redirect("index.php?module=config-bookmarks");
@@ -270,7 +270,7 @@ if($mybb->input['action'] == "enable")
 	$db->update_query("bookmarks", $active, "bid='{$bookmark['bid']}'");
 
 	// Log admin action
-	log_admin_action($bookmark['bid'], $bookmark['name']);
+	log_admin_action($bookmark['bid'], htmlspecialchars_uni($bookmark['name']));
 
 	flash_message($lang->success_bookmark_enabled, 'success');
 	admin_redirect("index.php?module=config-bookmarks");
