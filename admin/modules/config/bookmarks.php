@@ -178,7 +178,7 @@ if($mybb->input['action'] == "edit")
 	}
 	else
 	{
-		$mybb->input = $bookmark;
+		$mybb->input = array_merge($mybb->input, $bookmark);
 	}
 
 	$form_container = new FormContainer($lang->edit_social_bookmark);
