@@ -165,16 +165,16 @@ min=1',
 		'title'		=> 'showthread_bookmarks',
 		'template'	=> $db->escape_string('<br />
 <table border="0" cellspacing="{$theme[\'borderwidth\']}" cellpadding="{$theme[\'tablespace\']}" class="tborder">
-<tr>
-<td class="thead"><span class="smalltext"><strong>{$lang->bookmarks}</strong></span></td>
-</tr>
-<tr>
-<td class="trow1" border="0" width="100%">
-<ul style="list-style-type:none; margin:0px; padding:1px;">
-{$bookmarklist}
-</ul>
-</td>
-</tr>
+	<tr>
+		<td class="thead"><span class="smalltext"><strong>{$lang->bookmarks}</strong></span></td>
+	</tr>
+	<tr>
+		<td class="trow1" border="0" width="100%">
+			<ul style="list-style-type:none; margin:0px; padding:1px;">
+				{$bookmarklist}
+			</ul>
+		</td>
+	</tr>
 </table>'),
 		'sid'		=> '-1',
 		'version'	=> '',
