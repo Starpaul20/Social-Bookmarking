@@ -184,7 +184,7 @@ min=1',
 
 	$insert_array = array(
 		'title'		=> 'showthread_bookmarks_item',
-		'template'	=> $db->escape_string('<li style="width:{$value}%; float:left;"><a href="{$bookmark[\'link\']}"><img src="{$bookmark[\'image\']}" alt="{$alt_submit}">&nbsp;{$bookmark[\'name\']}</a></li>'),
+		'template'	=> $db->escape_string('<li style="width:{$value}%; float:left;"><a href="{$bookmark[\'link\']}" title="{$title}"><img src="{$bookmark[\'image\']}" alt="{$bookmark[\'name\']}">&nbsp;{$bookmark[\'name\']}</a></li>'),
 		'sid'		=> '-1',
 		'version'	=> '',
 		'dateline'	=> TIME_NOW
@@ -227,9 +227,9 @@ function socialbookmark_run()
 			$tid = get_thread_link($thread['tid']);
 			$bookmark['link'] = str_replace("{url}", "{$mybb->settings['bburl']}/{$tid}", $bookmark['link']);
 			$bookmark['link'] = str_replace("{title}", $thread['subject'], $bookmark['link']);
-			$alt_submit = $lang->sprintf($lang->submit_thread_to, $bookmark['name']);
-			$value = 100/$mybb->settings['bookmarking_number'];
 			$bookmark['name'] = htmlspecialchars_uni($bookmark['name']);
+			$title = $lang->sprintf($lang->submit_thread_to, $bookmark['name']);
+			$value = 100/$mybb->settings['bookmarking_number'];
 			eval("\$bookmarklist .= \"".$templates->get('showthread_bookmarks_item')."\";");
 			++$bookmarkcount;
 		}
