@@ -1,6 +1,6 @@
 ## INFORMATION ##
 
-Social Bookmarking (1.1) for MyBB 1.8
+Social Bookmarking (1.2) for MyBB 1.8
 Created by: Starpaul20
 Copyright: ©2011
 License: GPL
