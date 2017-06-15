@@ -261,7 +261,7 @@ function socialbookmark_admin_action_handler($actions)
 
 function socialbookmark_admin_permissions($admin_permissions)
 {
-	global $db, $mybb, $lang;
+	global $lang;
 	$lang->load("config_bookmarks");
 
 	$admin_permissions['bookmarks'] = $lang->can_manage_social_bookmarks;
