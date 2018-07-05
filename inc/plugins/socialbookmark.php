@@ -93,7 +93,7 @@ function socialbookmark_install()
 	$db->write_query("INSERT INTO ".TABLE_PREFIX."bookmarks (bid, name, link, image, disporder) VALUES
 (1, 'Digg', 'http://digg.com/submit?phrase=2&url={url}&title={title}', 'images/bookmarks/digg.png', 1),
 (2, 'del.icio.us', 'https://del.icio.us/post?url={url}&title={title}', 'images/bookmarks/delicious.png', 2),
-(3, 'StumbleUpon', 'http://www.stumbleupon.com/badge?url={url}&title={title}', 'images/bookmarks/stumbleupon.png', 3),
+(3, 'Google Plus', 'https://plus.google.com/share?url={url}', 'images/bookmarks/googleplus.png', 3),
 (4, 'Facebook', 'https://www.facebook.com/sharer.php?u={url}&title={title}', 'images/bookmarks/facebook.png', 4),
 (5, 'Google', 'https://www.google.com/bookmarks/mark?op=edit&bkmk={url}&title={title}', 'images/bookmarks/google.png', 5),
 (6, 'Reddit', 'https://www.reddit.com/submit?url={url}&title={title}', 'images/bookmarks/reddit.png', 6),
