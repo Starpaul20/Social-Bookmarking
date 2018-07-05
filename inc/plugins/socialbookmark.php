@@ -91,18 +91,18 @@ function socialbookmark_install()
 	}
 
 	$db->write_query("INSERT INTO ".TABLE_PREFIX."bookmarks (bid, name, link, image, disporder) VALUES
-(1, 'Digg', 'http://digg.com/submit?phrase=2&url={url}&title={title}', 'images/bookmarks/digg.png', 1),
-(2, 'del.icio.us', 'https://del.icio.us/post?url={url}&title={title}', 'images/bookmarks/delicious.png', 2),
+(1, 'Facebook', 'https://www.facebook.com/sharer.php?u={url}&title={title}', 'images/bookmarks/facebook.png', 1),
+(2, 'Twitter', 'https://twitter.com/intent/tweet?text={title} {url}', 'images/bookmarks/twitter.png', 2),
 (3, 'Google Plus', 'https://plus.google.com/share?url={url}', 'images/bookmarks/googleplus.png', 3),
-(4, 'Facebook', 'https://www.facebook.com/sharer.php?u={url}&title={title}', 'images/bookmarks/facebook.png', 4),
-(5, 'Google', 'https://www.google.com/bookmarks/mark?op=edit&bkmk={url}&title={title}', 'images/bookmarks/google.png', 5),
-(6, 'Reddit', 'https://www.reddit.com/submit?url={url}&title={title}', 'images/bookmarks/reddit.png', 6),
-(7, 'Twitter', 'https://twitter.com/intent/tweet?text={title} {url}', 'images/bookmarks/twitter.png', 7),
-(8, 'LinkedIn', 'https://www.linkedin.com/shareArticle?url={url}&title={title}', 'images/bookmarks/linkedin.png', 8),
+(4, 'Reddit', 'https://www.reddit.com/submit?url={url}&title={title}', 'images/bookmarks/reddit.png', 4),
+(5, 'Digg', 'http://digg.com/submit?phrase=2&url={url}&title={title}', 'images/bookmarks/digg.png', 5),
+(6, 'del.icio.us', 'https://del.icio.us/post?url={url}&title={title}', 'images/bookmarks/delicious.png', 6),
+(7, 'Tumblr', 'https://www.tumblr.com/widgets/share/tool?canonicalUrl={url}', 'images/bookmarks/tumblr.png', 7),
+(8, 'Pinterest', 'https://pinterest.com/pin/create/button/?url={url}', 'images/bookmarks/pinterest.png', 8),
 (9, 'Blogger', 'https://www.blogger.com/blog-this.g?u={url}&n={title}', 'images/bookmarks/blogger.png', 9),
 (10, 'Fark', 'https://www.fark.com/submit?new_url={url}', 'images/bookmarks/fark.png', 10),
-(11, 'Tumblr', 'https://www.tumblr.com/widgets/share/tool?canonicalUrl={url}', 'images/bookmarks/tumblr.png', 11),
-(12, 'Pinterest', 'http://pinterest.com/pin/create/button/?url={url}', 'images/bookmarks/pinterest.png', 12)");
+(11, 'LinkedIn', 'https://www.linkedin.com/shareArticle?url={url}&title={title}', 'images/bookmarks/linkedin.png', 11),
+(12, 'Google', 'https://www.google.com/bookmarks/mark?op=edit&bkmk={url}&title={title}', 'images/bookmarks/google.png', 12)");
 }
 
 // Checks to make sure plugin is installed
