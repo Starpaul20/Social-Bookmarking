@@ -195,7 +195,7 @@ min=1',
 	$db->insert_query("templates", $insert_array);
 
 	// Update templates
-	include MYBB_ROOT."/inc/adminfunctions_templates.php";
+	require_once MYBB_ROOT."/inc/adminfunctions_templates.php";
 	find_replace_templatesets("showthread", "#".preg_quote('{$quickreply}')."#i", '{$socialbookmarks}{$quickreply}');
 
 	change_admin_permission('config', 'bookmarks');
@@ -209,7 +209,7 @@ function socialbookmark_deactivate()
 	$db->delete_query("templates", "title IN('showthread_bookmarks','showthread_bookmarks_item')");
 	rebuild_settings();
 
-	include MYBB_ROOT."/inc/adminfunctions_templates.php";
+	require_once MYBB_ROOT."/inc/adminfunctions_templates.php";
 	find_replace_templatesets("showthread", "#".preg_quote('{$socialbookmarks}')."#i", '', 0);
 
 	change_admin_permission('config','bookmarks', -1);
