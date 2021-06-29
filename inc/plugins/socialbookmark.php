@@ -224,6 +224,7 @@ function socialbookmark_run()
 	if($mybb->settings['showbookmarking'] != 0)
 	{
 		$bookmarkcount = 0;
+		$bookmarklist = '';
 		$query = $db->simple_select("bookmarks", "*", "active='1'", array('order_by' => 'disporder', 'order_dir' => 'ASC'));
 		while($bookmark = $db->fetch_array($query))
 		{

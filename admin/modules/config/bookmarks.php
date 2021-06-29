@@ -83,18 +83,18 @@ if($mybb->input['action'] == "add")
 		$mybb->input['active'] = 1;
 	}
 
-	if(!$mybb->input['disporder'])
+	if(empty($mybb->input['disporder']))
 	{
 		$query = $db->simple_select("bookmarks", "max(disporder) as dispordermax");
 		$mybb->input['disporder'] = $db->fetch_field($query, "dispordermax")+1;
 	}
 
 	$form_container = new FormContainer($lang->add_social_bookmark);
-	$form_container->output_row($lang->name." <em>*</em>", "", $form->generate_text_box('name', $mybb->input['name'], array('id' => 'name')), 'name');
-	$form_container->output_row($lang->link." <em>*</em>", $lang->link_desc, $form->generate_text_box('link', $mybb->input['link'], array('id' => 'link')), 'link');
-	$form_container->output_row($lang->bookmark_icon_path." <em>*</em>", $lang->bookmark_icon_path_desc, $form->generate_text_box('image', $mybb->input['image'], array('id' => 'image')), 'image');
-	$form_container->output_row($lang->display_order." <em>*</em>", $lang->bookmark_display_order_desc, $form->generate_numeric_field('disporder', $mybb->input['disporder'], array('id' => 'disporder', 'min' => 0)), 'disporder');
-	$form_container->output_row($lang->active." <em>*</em>", "", $form->generate_yes_no_radio('active', $mybb->input['active']));
+	$form_container->output_row($lang->name." <em>*</em>", "", $form->generate_text_box('name', $mybb->get_input('name'), array('id' => 'name')), 'name');
+	$form_container->output_row($lang->link." <em>*</em>", $lang->link_desc, $form->generate_text_box('link', $mybb->get_input('link'), array('id' => 'link')), 'link');
+	$form_container->output_row($lang->bookmark_icon_path." <em>*</em>", $lang->bookmark_icon_path_desc, $form->generate_text_box('image', $mybb->get_input('image'), array('id' => 'image')), 'image');
+	$form_container->output_row($lang->display_order." <em>*</em>", $lang->bookmark_display_order_desc, $form->generate_numeric_field('disporder', $mybb->get_input('disporder'), array('id' => 'disporder', 'min' => 0)), 'disporder');
+	$form_container->output_row($lang->active." <em>*</em>", "", $form->generate_yes_no_radio('active', $mybb->get_input('active')));
 	$form_container->end();
 
 	$buttons[] = $form->generate_submit_button($lang->save_bookmark);
