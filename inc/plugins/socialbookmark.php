@@ -11,14 +11,17 @@ if(!defined("IN_MYBB"))
 }
 
 // Neat trick for caching our custom template(s)
-if(THIS_SCRIPT == 'showthread.php')
+if(defined('THIS_SCRIPT'))
 {
-	global $templatelist;
-	if(isset($templatelist))
+	if(THIS_SCRIPT == 'showthread.php')
 	{
-		$templatelist .= ',';
+		global $templatelist;
+		if(isset($templatelist))
+		{
+			$templatelist .= ',';
+		}
+		$templatelist .= 'showthread_bookmarks,showthread_bookmarks_item';
 	}
-	$templatelist .= 'showthread_bookmarks,showthread_bookmarks_item';
 }
 
 // Tell MyBB when to run the hooks
