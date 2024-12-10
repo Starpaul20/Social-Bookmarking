@@ -95,7 +95,7 @@ function socialbookmark_install()
 
 	$db->write_query("INSERT INTO ".TABLE_PREFIX."bookmarks (bid, name, link, image, disporder) VALUES
 (1, 'Facebook', 'https://www.facebook.com/sharer.php?u={url}&title={title}', 'images/bookmarks/facebook.png', 1),
-(2, 'Twitter', 'https://twitter.com/intent/tweet?text={title} {url}', 'images/bookmarks/twitter.png', 2),
+(2, 'Twitter/X', 'https://x.com/intent/tweet?text={title} {url}', 'images/bookmarks/x.png', 2),
 (3, 'Reddit', 'https://www.reddit.com/submit?url={url}&title={title}', 'images/bookmarks/reddit.png', 3),
 (4, 'Digg', 'http://digg.com/submit?phrase=2&url={url}&title={title}', 'images/bookmarks/digg.png', 4),
 (5, 'del.icio.us', 'https://del.icio.us/post?url={url}&title={title}', 'images/bookmarks/delicious.png', 5),
