@@ -1,3 +1,8 @@
+1.5 (December 10th, 2024)
+- Removed Google Bookmarks, added BlueSky
+- Fixed undefined errors in Admin CP with PHP 8.2
+- Updated Twitter to X
+
 1.4 (June 29th, 2021)
 - Added check to see if THIS_SCRIPT is defined
 - Fixed PHP 8.0 errors
