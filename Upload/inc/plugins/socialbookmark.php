@@ -105,7 +105,7 @@ function socialbookmark_install()
 (9, 'Fark', 'https://www.fark.com/submit?new_url={url}', 'images/bookmarks/fark.png', 9),
 (10, 'LinkedIn', 'https://www.linkedin.com/shareArticle?url={url}&title={title}', 'images/bookmarks/linkedin.png', 10),
 (11, 'Mix', 'https://mix.com/add?url={url}', 'images/bookmarks/mix.png', 11),
-(12, 'Google', 'https://www.google.com/bookmarks/mark?op=edit&bkmk={url}&title={title}', 'images/bookmarks/google.png', 12)");
+(12, 'BlueSky', 'https://bsky.app/intent/compose?text={title} {url}', 'images/bookmarks/bluesky.png', 12)");
 }
 
 // Checks to make sure plugin is installed
